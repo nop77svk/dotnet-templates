@@ -1,10 +1,10 @@
 {
 	"$schema": "http://json.schemastore.org/template",
 	"author": "Peter Hraško",
-	"classifications": [ "NoP77svk", "Library" ],
-	"identity": "NoP77svk.Library",
-	"name": "Class Library (NoP77svk)",
-	"shortName": "nop77svk.lib",
+	"classifications": [ "NoP77svk", "Console" ],
+	"identity": "NoP77svk.Console",
+	"name": "Console app (NoP77svk)",
+	"shortName": "nop77svk.app.console",
 	"sourceName": "{ProjectName}",
 	"preferNameDirectory": true,
 	"tags": {
@@ -38,23 +38,6 @@
 				{
 					"choice": "netstandard2.0",
 					"description": ".NET Standard 2.0"
-				}
-			]
-		},
-		"IsNuget": {
-			"type": "parameter",
-			"description": "Generate NuGet package on build?",
-			"datatype": "choice",
-			"defaultValue": "false",
-			"replaces": "{IsNuGet}",
-			"choices": [
-				{
-					"choice": "false",
-					"description": "No"
-				},
-				{
-					"choice": "true",
-					"description": "Yes"
 				}
 			]
 		}
