@@ -12,6 +12,12 @@
 		"type": "project"
 	},
 	"symbols": {
+		"Company": {
+			"type": "string",
+			"description": "Company namespace",
+			"defaultValue": "NoP77svk",
+			"replaces": "{CompanyNamespace}"
+		},
 		"Framework": {
 			"type": "parameter",
 			"description": "Target .NET version for the project",

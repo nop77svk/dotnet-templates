@@ -10,9 +10,9 @@
 		<Company>Open source community</Company>
 		<Copyright>Practically copyleft</Copyright>
 		<NoWarn>1701;1702;AD0001;NETSDK1182</NoWarn>
-		<PackageId>NoP77svk.{ProjectName}</PackageId>
+		<PackageId>{CompanyNamespace}.{ProjectName}</PackageId>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<RootNamespace>NoP77svk.{ProjectName}</RootNamespace>
+		<RootNamespace>{CompanyNamespace}.{ProjectName}</RootNamespace>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
