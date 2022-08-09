@@ -29,7 +29,7 @@
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<Compile Include="..\_globals\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
 	</ItemGroup>
 
 	<Target Name="PostClean" AfterTargets="Clean">
