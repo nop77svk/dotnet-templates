@@ -43,20 +43,10 @@
 		},
 		"IsNuget": {
 			"type": "parameter",
-			"description": "Generate NuGet package on build?",
-			"datatype": "choice",
+			"description": "Generate NuGet package on build",
+			"datatype": "bool",
 			"defaultValue": "false",
-			"replaces": "{IsNuGet}",
-			"choices": [
-				{
-					"choice": "false",
-					"description": "No"
-				},
-				{
-					"choice": "true",
-					"description": "Yes"
-				}
-			]
+			"replaces": "{IsNuGet}"
 		}
 	}
 }
