@@ -12,12 +12,6 @@
 		"type": "project"
 	},
 	"symbols": {
-		"Company": {
-			"type": "string",
-			"description": "Company namespace",
-			"defaultValue": "NoP77svk",
-			"replaces": "{CompanyNamespace}"
-		},
 		"Framework": {
 			"type": "parameter",
 			"description": "Target .NET version for the project",
@@ -47,12 +41,18 @@
 				}
 			]
 		},
-		"IsNuget": {
+		"NuGet": {
 			"type": "parameter",
 			"description": "Generate NuGet package on build",
 			"datatype": "bool",
 			"defaultValue": "false",
 			"replaces": "{IsNuGet}"
+		},
+		"Company": {
+			"type": "parameter",
+			"description": "Company namespace",
+			"defaultValue": "NoP77svk",
+			"replaces": "{Company}"
 		}
 	}
 }

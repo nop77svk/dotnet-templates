@@ -12,12 +12,6 @@
 		"type": "project"
 	},
 	"symbols": {
-		"Company": {
-			"type": "string",
-			"description": "Company namespace",
-			"defaultValue": "NoP77svk",
-			"replaces": "{Company}"
-		},
 		"Framework": {
 			"type": "parameter",
 			"description": "Target .NET version for the project",
@@ -46,6 +40,12 @@
 					"description": ".NET Standard 2.0"
 				}
 			]
+		},
+		"Company": {
+			"type": "parameter",
+			"description": "Company namespace",
+			"defaultValue": "NoP77svk",
+			"replaces": "{Company}"
 		}
 	}
 }
