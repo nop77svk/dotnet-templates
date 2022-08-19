@@ -10,9 +10,10 @@
 		<Company>Open source community</Company>
 		<Copyright>Practically copyleft</Copyright>
 		<NoWarn>1701;1702;AD0001;NETSDK1182</NoWarn>
+		<RootNamespace>{Company}.{ProjectName}</RootNamespace>
+		<AssemblyName>{Company}.{ProjectName}</AssemblyName>
 		<PackageId>{Company}.{ProjectName}</PackageId>
 		<GeneratePackageOnBuild>{IsNuGet}</GeneratePackageOnBuild>
-		<RootNamespace>{Company}.{ProjectName}</RootNamespace>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
