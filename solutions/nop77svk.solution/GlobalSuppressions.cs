@@ -30,6 +30,7 @@
 [assembly: SuppressMessage("Style", "SA1516")] // Elements should be separated by a blank line
 
 [assembly: SuppressMessage("Style", "SA0001")] // XML comment analysis disabled
+[assembly: SuppressMessage("Style", "SA1010")] // Opening square brackets should not be preceded by a whitespace
 [assembly: SuppressMessage("Style", "SA1600")] // Elements should be documented
 [assembly: SuppressMessage("Style", "SA1601")] // Partial elements should be documented
 [assembly: SuppressMessage("Style", "SA1602")] // Enumeration items should be documented
@@ -38,3 +39,6 @@
 [assembly: SuppressMessage("Style", "SA1615")] // Missing return value doc
 [assembly: SuppressMessage("Style", "SA1629")] // Documentation text should end with a period
 [assembly: SuppressMessage("Style", "SA1633")] // Missing file header
+
+[assembly: SuppressMessage("SonarQube", "S2368")] // Make this constructor private or simplify its parameters to not use multidimensional/jagged arrays.
+[assembly: SuppressMessage("SonarQube", "S2955")] // Use a comparison to 'default(TCell)' instead or add a constraint to 'TCell' so that it can't be a value type.
