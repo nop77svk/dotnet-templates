@@ -25,6 +25,10 @@
 	    <BeautyEnableDebugging>False</BeautyEnableDebugging>
 	</PropertyGroup>
 
+    <ItemGroup>
+      <Compile Include="..\IsExternalInit.cs" Link="IsExternalInit.cs" />
+    </ItemGroup>
+
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<DebugType>none</DebugType>
 		<DebugSymbols>false</DebugSymbols>
