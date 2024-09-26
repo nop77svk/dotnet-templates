@@ -18,37 +18,51 @@
 		<AssemblyName>{Company}.{ProjectName}</AssemblyName>
 		<PackageId>{Company}.{ProjectName}</PackageId>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	</PropertyGroup>
 
+    <ItemGroup>
+    </ItemGroup>
+
+    <ItemGroup Label="build beautifying">
+	    <PackageReference Include="nulastudio.NetBeauty" Version="*" />
+    </ItemGroup>
+
+	<PropertyGroup Label="build beautifying">
 		<BeautyLibsDir>./bin</BeautyLibsDir>
 		<BeautyHiddens>hostfxr;hostpolicy;*.deps.json;*.runtimeconfig*.json</BeautyHiddens>
 	    <BeautyOnPublishOnly>True</BeautyOnPublishOnly>
 	    <BeautyEnableDebugging>False</BeautyEnableDebugging>
 	</PropertyGroup>
 
-    <ItemGroup>
-      <Compile Include="..\IsExternalInit.cs" Link="IsExternalInit.cs" />
+    <ItemGroup Label="records backwards compatibility">
+        <Compile Include="..\IsExternalInit.cs" Link="IsExternalInit.cs" />
     </ItemGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-		<DebugType>none</DebugType>
-		<DebugSymbols>false</DebugSymbols>
-	</PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'" Label="no PDBs in Release mode">
+        <DebugType>none</DebugType>
+        <DebugSymbols>false</DebugSymbols>
+    </PropertyGroup>
 
-	<ItemGroup>
-	    <PackageReference Include="nulastudio.NetBeauty" Version="*" />
-		<PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="*">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="StyleCop.Analyzers" Version="*">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
-	</ItemGroup>
+    <ItemGroup Label="analyzers">
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="*">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="StyleCop.Analyzers" Version="*">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="*">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+    </ItemGroup>
 
-	<Target Name="PostClean" AfterTargets="Clean">
-		<RemoveDir Directories="$(BaseIntermediateOutputPath)" /><!-- obj -->
-		<RemoveDir Directories="$(BaseOutputPath)" /><!-- bin -->
-	</Target>
+    <Target Name="PostClean" AfterTargets="Clean">
+        <!-- obj -->
+        <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
+        <!-- bin -->
+        <RemoveDir Directories="$(BaseOutputPath)" />
+    </Target>
 </Project>
