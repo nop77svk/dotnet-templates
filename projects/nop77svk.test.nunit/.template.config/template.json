@@ -1,10 +1,10 @@
 {
 	"$schema": "http://json.schemastore.org/template",
 	"author": "Peter Hraško",
-	"classifications": [ "NoP77svk", "Library" ],
-	"identity": "NoP77svk.Library",
-	"name": "Class Library (NoP77svk)",
-	"shortName": "nop77svk.lib",
+	"classifications": [ "NoP77svk", "Test", "NUnit" ],
+	"identity": "NoP77svk.Test.NUnit",
+	"name": "Test project :: NUnit (NoP77svk)",
+	"shortName": "nop77svk.test.nunit",
 	"sourceName": "{ProjectName}",
 	"preferNameDirectory": true,
 	"tags": {
