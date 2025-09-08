@@ -1,38 +1,35 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<OutputType>Exe</OutputType>
-		<TargetFramework>{NetVersion}</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>{NetVersion}</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
 
-		<Product>...</Product>
-	    <AssemblyTitle>...</AssemblyTitle>
-	    <Version>0.0.0</Version>
-		<Authors>Peter Hraško</Authors>
-		<Company>Open source community</Company>
-		<Copyright>Practically copyleft</Copyright>
-		<NoWarn>1701;1702;AD0001;NETSDK1182</NoWarn>
-
-		<RootNamespace>{Company}.{ProjectName}</RootNamespace>
-		<AssemblyName>{Company}.{ProjectName}</AssemblyName>
-		<PackageId>{Company}.{ProjectName}</PackageId>
-		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-	</PropertyGroup>
+        <Product>...</Product>
+        <Authors>Peter Hraško</Authors>
+        <Company>Open source community</Company>
+        <Copyright>Practically copyleft</Copyright>
+        <RootNamespace>{Company}.{ProjectName}</RootNamespace>
+        <AssemblyName>{Company}.{ProjectName}</AssemblyName>
+        <PackageId>{Company}.{ProjectName}</PackageId>
+        <GeneratePackageOnBuild>{IsNuGet}</GeneratePackageOnBuild>
+    </PropertyGroup>
 
     <ItemGroup>
     </ItemGroup>
 
     <ItemGroup Label="build beautifying">
-	    <PackageReference Include="nulastudio.NetBeauty" Version="*" />
+        <PackageReference Include="nulastudio.NetBeauty" Version="*" />
     </ItemGroup>
 
-	<PropertyGroup Label="build beautifying">
-		<BeautyLibsDir>./bin</BeautyLibsDir>
-		<BeautyHiddens>hostfxr;hostpolicy;*.deps.json;*.runtimeconfig*.json</BeautyHiddens>
-	    <BeautyOnPublishOnly>True</BeautyOnPublishOnly>
-	    <BeautyEnableDebugging>False</BeautyEnableDebugging>
-	</PropertyGroup>
+    <PropertyGroup Label="build beautifying">
+        <BeautyLibsDir>./bin</BeautyLibsDir>
+        <BeautyHiddens>hostfxr;hostpolicy;*.deps.json;*.runtimeconfig*.json</BeautyHiddens>
+        <BeautyOnPublishOnly>True</BeautyOnPublishOnly>
+        <BeautyEnableDebugging>False</BeautyEnableDebugging>
+    </PropertyGroup>
 
     <ItemGroup Label="records backwards compatibility">
         <Compile Include="..\IsExternalInit.cs" Link="IsExternalInit.cs" />
@@ -44,10 +41,6 @@
     </PropertyGroup>
 
     <ItemGroup Label="analyzers">
-        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="*">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
         <PackageReference Include="StyleCop.Analyzers" Version="*">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -56,7 +49,6 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
     </ItemGroup>
 
     <Target Name="PostClean" AfterTargets="Clean">
@@ -65,4 +57,5 @@
         <!-- bin -->
         <RemoveDir Directories="$(BaseOutputPath)" />
     </Target>
+
 </Project>
